@@ -2,4 +2,48 @@ body {
   font-family: "Shadows Into Light Two", cursive;
   font-weight: 400;
   font-style: normal;
+  background-color: #ef8733;
+}
+
+header {
+  border-radius: 65px;
+  background-color: black;
+  padding: 20px;
+}
+
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title img {
+  height: 3rem;
+  width: auto;
+  animation: lightSpeedInLeft;
+  animation-duration: 0.5s;
+}
+
+h1 {
+  font-family: "Shadows Into Light Two", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #ef8733;
+}
+.difficulty-title {
+  font-family: "Shadows Into Light Two", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #ef8733; 
+  width: 100%;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+h3 {
+  font-family: "Shadows Into Light Two", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #ef8733; 
 }

@@ -16,6 +16,10 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+          <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
@@ -24,7 +28,11 @@
 
     <body>
         <header class="row text-center">
-            <h1 class="text-center">Hangman Game!</h1>
+            <div class="title">
+                <img src="f1logo.png" alt="F1 Logo" class="img-fluid w-25 animate__animated animate__lightSpeedInLeft">
+                <h1 class="text-center">Hangman Game!</h1>
+            </div>
+            <h3 class="difficulty-title">Select a difficulty...</h3>
             <div class="col-4">
                 <button id="Easymode" class="btn btn-success w-100">Easy</button>
             </div>
