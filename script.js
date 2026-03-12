@@ -1,4 +1,4 @@
-// Listen for the event that fires when the HTML page finishes loading
+let wordBank = ['Sprint', 'Pole', 'Box Box', 'Cockpit', 'Abu Dhabi', 'Monaco', 'McLaren', 'Grand Prix', 'Team Radio', 'Qualifying']; // You can add more words to this array
 document.addEventListener("DOMContentLoaded", function () {
  // Any code inside this function will run
  // as soon as the page is fully loaded
