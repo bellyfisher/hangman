@@ -1,13 +1,13 @@
 body {
-  font-family: "Shadows Into Light Two", cursive;
+  font-family: "Carter One", system-ui;
   font-weight: 400;
   font-style: normal;
-  background-color: #ef8733;
+  background-color: black;
 }
 
 header {
   border-radius: 65px;
-  background-color: black;
+  background-color: #ef8733;
   padding: 20px;
 }
 
@@ -22,28 +22,61 @@ header {
   height: 3rem;
   width: auto;
   animation: lightSpeedInLeft;
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
+}
+
+header h1 {
+  font-family: "Carter One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
 }
 
 h1 {
-  font-family: "Shadows Into Light Two", cursive;
+  font-family: "Carter One", system-ui;
   font-weight: 400;
   font-style: normal;
+  text-align: center;
+  padding: 25px;
   color: #ef8733;
 }
+
 .difficulty-title {
-  font-family: "Shadows Into Light Two", cursive;
+  font-family: "Carter One", system-ui;
   font-weight: 400;
   font-style: normal;
-  color: #ef8733; 
+  color: black; 
   width: 100%;
   margin-top: 0.5rem;
   text-align: center;
 }
 
 h3 {
-  font-family: "Shadows Into Light Two", cursive;
+  font-family: "Carter One", system-ui;
   font-weight: 400;
   font-style: normal;
-  color: #ef8733; 
+  color: black; 
+}
+
+.card {
+  background-color: transparent;
+  border: none;
+}
+
+.card-body {
+  background-color: #ef8733;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 20px;
+  filter: drop-shadow(2px 2px 2px white);
+}
+
+.card-title {
+  font-family: "Carter One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #ef8733;
+  background-color: white;
+  border-radius: 25px;
+  padding: 15px;
 }

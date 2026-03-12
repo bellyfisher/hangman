@@ -25,6 +25,16 @@ for (let i = 0; i < secretWord.length; i++) {
  // charAt(i) returns the character located at index i
  let letter = secretWord.charAt(i);
 
+ 
+//function showSymbol (operator) {
+//  if (operator === '&') return '&'
+//  if (operator === '?') return '?'
+//  if (operator === '!') return '!'
+//  if (operator === ',') return ','
+//  return operator
+//}
+
+
  // Check if this letter exists in the guessedLetters array
  // includes() returns true if the letter exists in the array
  if (guessedLetters.includes(letter)) {
