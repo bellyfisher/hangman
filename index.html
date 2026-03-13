@@ -29,28 +29,37 @@
     <body>
         <header class="row text-center">
             <div class="title">
-                <img src="f1logo.png" alt="F1 Logo" class="img-fluid w-25 animate__animated animate__lightSpeedInLeft">
+                <img src="f1logo.png" alt="F1 Logo" class="w-25 animate__animated animate__lightSpeedInLeft">
                 <h1 class="text-center">Hangman Game!</h1>
             </div>
             <h3 class="difficulty-title">Select a difficulty...</h3>
             <div class="col-4">
-                <button id="Easymode" class="btn btn-success w-100">Easy</button>
+                <button id="Easymode" class="btn btn-success w-100">Easy - Terms</button>
             </div>
                         <div class="col-4">
-                <button id="Intermediatemode" class="btn btn-warning w-100">Intermediate</button>
+                <button id="Intermediatemode" class="btn btn-warning w-100">Intermediate - Drivers</button>
             </div>
                         <div class="col-4">
-                <button id="Difficultmode" class="btn btn-danger w-100">Difficult</button>
+                <button id="Difficultmode" class="btn btn-danger w-100">Difficult - Locations</button>
 
         </header>
         <main>
             <h1>Current Position: P1</h1>
+            <div id="result1">
+                <img src="winner.gif" alt="Winning Image" class="w-50">
+                <br>
+                <h1>You Win!</h1>
+            </div>
+            <div id="result2">
+
+                <h1>You Crashed!</h1>
+            </div>
              <div class="container-fluid px-0">
                 <div class="row g-0">
                     <div class="col-6">
                              <div class="card">
                             <div class="card-body">
-                                <h4 id="cardTitle" class="card-title">_ _ _ _ _ _ _ _ _</h4>
+                                <h4 id="display" class="card-title">_ _ _ _ _ _ _ _ _</h4>
                                 <div class="row g-2 mb-2">
                                     <div class="col-2">
                                         <button class="btn btn-outline-dark w-100" onclick="pressLetter('A')">A</button>
@@ -152,7 +161,7 @@
                 <div class="col-6">
                              <div class="card">
                             <div class="card-body">
-                                <h4 id="cardTitle" class="card-title">Wrong Guesses: _ _ _ _ _ _ _ _ _</h4>
+                                <h4 id="cardTitle" class="card-title">Wrong Guesses:</h4>
         </main>
         <footer>
             <!-- place footer here -->

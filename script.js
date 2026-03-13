@@ -1,4 +1,7 @@
-let wordBank = ['Sprint', 'Pole', 'Box Box', 'Cockpit', 'Abu Dhabi', 'Monaco', 'McLaren', 'Grand Prix', 'Team Radio', 'Qualifying']; // You can add more words to this array
+let wordBankTerms = ['Sprint', 'Pole', 'Box Box', 'Cockpit', 'Grand Prix', 'Team Radio', 'Qualifying']; // You can add more words to this array
+let wordBankDrivers = ['Hamilton', 'Verstappen', 'Leclerc', 'Sainz', 'Perez', 'Russell', 'Alonso', 'Norris', 'Piastri', 'Gasly']; // You can add more words to this array
+let wordBankLocations = ['Monaco', 'Abu Dhabi', 'Silverstone', 'Las Vegas', 'Miami', 'Singapore', 'Azerbaijan', 'Australia', 'Shanghai']; // You can add more words to this array
+let guessedLetters = []; // This array will hold the letters the player has guessed
 document.addEventListener("DOMContentLoaded", function () {
  // Any code inside this function will run
  // as soon as the page is fully loaded
@@ -25,15 +28,6 @@ for (let i = 0; i < secretWord.length; i++) {
  // charAt(i) returns the character located at index i
  let letter = secretWord.charAt(i);
 
- 
-//function showSymbol (operator) {
-//  if (operator === '&') return '&'
-//  if (operator === '?') return '?'
-//  if (operator === '!') return '!'
-//  if (operator === ',') return ','
-//  return operator
-//}
-
 
  // Check if this letter exists in the guessedLetters array
  // includes() returns true if the letter exists in the array
@@ -46,8 +40,10 @@ for (let i = 0; i < secretWord.length; i++) {
 
  } else {
 
-   // If the letter has NOT been guessed,
-   // add an underscore instead
+do {
+ currentPosition++;
+ console.log('Current Position: P' + currentPosition); 
+} while (guessedLetters !== secretWord);
    display += "_ ";
  }
 

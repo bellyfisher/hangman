@@ -19,7 +19,7 @@ header {
 }
 
 .title img {
-  height: 3rem;
+  height: 100px;
   width: auto;
   animation: lightSpeedInLeft;
   animation-duration: 0.4s;
