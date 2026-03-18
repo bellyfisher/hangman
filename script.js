@@ -1,50 +1,95 @@
-let wordBankTerms = ['Sprint', 'Pole', 'Box Box', 'Cockpit', 'Grand Prix', 'Team Radio', 'Qualifying']; // You can add more words to this array
-let wordBankDrivers = ['Hamilton', 'Verstappen', 'Leclerc', 'Sainz', 'Perez', 'Russell', 'Alonso', 'Norris', 'Piastri', 'Gasly']; // You can add more words to this array
-let wordBankLocations = ['Monaco', 'Abu Dhabi', 'Silverstone', 'Las Vegas', 'Miami', 'Singapore', 'Azerbaijan', 'Australia', 'Shanghai']; // You can add more words to this array
-let guessedLetters = []; // This array will hold the letters the player has guessed
+let wordBankTerms = ['Sprint', 'Pole', 'Box Box', 'Cockpit', 'Grand Prix', 'Team Radio', 'Qualifying'];
+let wordBankDrivers = ['Hamilton', 'Verstappen', 'Leclerc', 'Sainz', 'Perez', 'Russell', 'Alonso', 'Norris', 'Piastri', 'Gasly'];
+let wordBankLocations = ['Monaco', 'Abu Dhabi', 'Silverstone', 'Las Vegas', 'Miami', 'Singapore', 'Azerbaijan', 'Australia', 'Shanghai'];
+
+let guessedLetters = [];
+let wrongGuesses = [];
+let secretWord = "";
+let maxWrong = 6;
+
 document.addEventListener("DOMContentLoaded", function () {
- // Any code inside this function will run
- // as soon as the page is fully loaded
- startGame();
+    // Difficulty buttons
+    document.getElementById("Easymode").addEventListener("click", () => startGame(wordBankTerms));
+    document.getElementById("Intermediatemode").addEventListener("click", () => startGame(wordBankDrivers));
+    document.getElementById("Difficultmode").addEventListener("click", () => startGame(wordBankLocations));
 });
-// This is an example function structure
-// You will place your game setup logic inside it
-function startGame() {
- // Example things your game might do here:
- // • pick the random word
- // • reset variables
- // • build the starting display
- // • update elements on the page
+
+function startGame(wordBank) {
+    guessedLetters = [];
+    wrongGuesses = [];
+    document.getElementById("result1").style.display = "none";
+    document.getElementById("result2").style.display = "none";
+    secretWord = wordBank[Math.floor(Math.random() * wordBank.length)].toUpperCase();
+
+    console.log("Secret Word:", secretWord); // for testing
+
+    updateDisplay();
+    updateWrongGuesses();
 }
-// ------------------------------------------------------------
-let display = "";   // This variable will hold the string we build for the screen
 
-// Loop through every letter in the secret word
-// i starts at 0 because strings use zero-based indexing
-// The loop will run once for each character in the word
-for (let i = 0; i < secretWord.length; i++) {
+function updateDisplay() {
+    let display = "";
 
- // Get the letter at the current position in the word
- // charAt(i) returns the character located at index i
- let letter = secretWord.charAt(i);
+    for (let i = 0; i < secretWord.length; i++) {
+        let letter = secretWord[i];
 
+        if (letter === " ") {
+            display += "  ";
+        } else if (guessedLetters.includes(letter)) {
+            display += letter + " ";
+        } else {
+            display += "_ ";
+        }
+    }
 
- // Check if this letter exists in the guessedLetters array
- // includes() returns true if the letter exists in the array
- if (guessedLetters.includes(letter)) {
+    document.getElementById("display").innerHTML = display;
 
-   // If the letter has been guessed,
-   // add the letter to the display string
-   // A space is added so the letters appear spaced out
-   display += letter + " ";
+    checkWin();
+}
 
- } else {
+function pressLetter(letter) {
+    letter = letter.toUpperCase();
 
-do {
- currentPosition++;
- console.log('Current Position: P' + currentPosition); 
-} while (guessedLetters !== secretWord);
-   display += "_ ";
- }
+    // Prevent duplicate guesses
+    if (guessedLetters.includes(letter) || wrongGuesses.includes(letter)) {
+        return;
+    }
 
+    if (secretWord.includes(letter)) {
+        guessedLetters.push(letter);
+    } else {
+        wrongGuesses.push(letter);
+    }
+
+    updateDisplay();
+    updateWrongGuesses();
+    checkLose();
+}
+
+function updateWrongGuesses() {
+    document.getElementById("cardTitle").innerHTML =
+        "Wrong Guesses: " + wrongGuesses.join(", ");
+}
+
+function checkWin() {
+    let won = true;
+
+    for (let i = 0; i < secretWord.length; i++) {
+        let letter = secretWord[i];
+
+        if (letter !== " " && !guessedLetters.includes(letter)) {
+            won = false;
+            break;
+        }
+    }
+
+    if (won) {
+        document.getElementById("result1").style.display = "block";
+    }
+}
+
+function checkLose() {
+    if (wrongGuesses.length >= maxWrong) {
+        document.getElementById("result2").style.display = "block";
+    }
 }
