@@ -34,23 +34,24 @@
             </div>
             <h3 class="difficulty-title">Select a difficulty...</h3>
             <div class="col-4">
-                <button id="Easymode" class="btn btn-success w-100">Easy - Terms</button>
+                <button id="Easymode" class="btn btn-success w-100">Easy - Locations</button>
             </div>
                         <div class="col-4">
                 <button id="Intermediatemode" class="btn btn-warning w-100">Intermediate - Drivers</button>
             </div>
                         <div class="col-4">
-                <button id="Difficultmode" class="btn btn-danger w-100">Difficult - Locations</button>
+                <button id="Difficultmode" class="btn btn-danger w-100">Difficult - Terms</button>
 
         </header>
         <main>
-            <div id="result1" class="text-center">
+            <div id="result1" class="text-center" style="display:none;">
                 <img src="winner.gif" alt="Winning Image" class="w-50">
                 <br>
                 <h1>You Win!</h1>
             </div>
-            <div id="result2">
-
+            <div id="result2" class="text-center" style="display:none;">
+                <img src="losing.webp" alt="Losing Image" class="w-50">
+                <br>
                 <h1>You Crashed!</h1>
             </div>
              <div class="container-fluid px-0">
@@ -162,7 +163,7 @@
                             <div class="card-body">
                                 <h4 id="cardTitle" class="card-title">Wrong Guesses:</h4>
         </main>
-        <footer>
+        <footer class="text-center p-3">
                         <h3>© Belly Cubley 2026, WDPP2</h3>
                         <hr>
             <h5>How to play?<br>Select a difficulty level to start (the types of words you'll guess is on the button!), and once you run out of guesses, you lose!<br><i>To restart the game, just select a difficulty again</i>!</h5>

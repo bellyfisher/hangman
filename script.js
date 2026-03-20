@@ -9,16 +9,16 @@ let maxWrong = 6;
 
 document.addEventListener("DOMContentLoaded", function () {
     // Difficulty buttons
-    document.getElementById("Easymode").addEventListener("click", () => startGame(wordBankTerms));
+    document.getElementById("Easymode").addEventListener("click", () => startGame(wordBankLocations));
     document.getElementById("Intermediatemode").addEventListener("click", () => startGame(wordBankDrivers));
-    document.getElementById("Difficultmode").addEventListener("click", () => startGame(wordBankLocations));
+    document.getElementById("Difficultmode").addEventListener("click", () => startGame(wordBankTerms));
 });
 
 function startGame(wordBank) {
-    guessedLetters = [];
-    wrongGuesses = [];
     document.getElementById("result1").style.display = "none";
     document.getElementById("result2").style.display = "none";
+    guessedLetters = [];
+    wrongGuesses = [];
     secretWord = wordBank[Math.floor(Math.random() * wordBank.length)].toUpperCase();
 
     console.log("Secret Word:", secretWord); // for testing

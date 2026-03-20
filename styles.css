@@ -50,9 +50,17 @@ h1 {
   margin-top: 0.5rem;
   text-align: center;
 }
+
 #result1 img {
   border-radius: 25px;
   padding-top: 15px;
+  filter: drop-shadow(3px 3px 3px #ef8733);
+}
+
+#result2 img {
+  border-radius: 25px;
+  padding-top: 15px;
+  filter: drop-shadow(3px 3px 3px #ef8733);
 }
 
 h3 {
