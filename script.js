@@ -1,4 +1,4 @@
-let wordBankTerms = ['Sprint', 'Pole', 'Box Box', 'Cockpit', 'Grand Prix', 'Team Radio', 'Qualifying'];
+let wordBankTerms = ['Sprint', 'Pole', 'Box Box', 'Cockpit', 'Grand Prix', 'Team Radio', 'Qualifying', 'Halo', 'DRS', 'Downforce'];
 let wordBankDrivers = ['Hamilton', 'Verstappen', 'Leclerc', 'Sainz', 'Perez', 'Russell', 'Alonso', 'Norris', 'Piastri', 'Gasly'];
 let wordBankLocations = ['Monaco', 'Abu Dhabi', 'Silverstone', 'Las Vegas', 'Miami', 'Singapore', 'Azerbaijan', 'Australia', 'Shanghai'];
 
@@ -45,6 +45,12 @@ function updateDisplay() {
     document.getElementById("display").innerHTML = display;
 
     checkWin();
+}
+
+function pressButton(button) {
+    if (button === "Reset") {
+        startGame([secretWord]); // Restart with the same word
+    }
 }
 
 function pressLetter(letter) {
