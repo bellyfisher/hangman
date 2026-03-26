@@ -5,7 +5,9 @@ let wordBankLocations = ['Monaco', 'Abu Dhabi', 'Silverstone', 'Las Vegas', 'Mia
 let guessedLetters = [];
 let wrongGuesses = [];
 let secretWord = "";
+
 let maxWrong = 6;
+
 
 document.addEventListener("DOMContentLoaded", function () {
     // Difficulty buttons
@@ -49,7 +51,7 @@ function updateDisplay() {
 
 function pressButton(button) {
     if (button === "Reset") {
-        startGame([secretWord]); // Restart with the same word
+        startGame([secretWord]);
     }
 }
 
@@ -58,7 +60,7 @@ function pressLetter(letter) {
 
     // Prevent duplicate guesses
     if (guessedLetters.includes(letter) || wrongGuesses.includes(letter)) {
-        return;
+        return wrongGuesses;
     }
 
     if (secretWord.includes(letter)) {
