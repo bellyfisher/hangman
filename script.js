@@ -36,7 +36,7 @@ function updateDisplay() {
         let letter = secretWord[i];
 
         if (letter === " ") {
-            display += "  ";
+            display += "&nbsp;&nbsp;"; // Add extra space for spaces in the word
         } else if (guessedLetters.includes(letter)) {
             display += letter + " ";
         } else {
@@ -98,6 +98,7 @@ function checkWin() {
 
 function checkLose() {
     if (wrongGuesses.length >= maxWrong) {
+        document.getElementById("result2").innerHTML = `<img src="losing.webp" alt="Losing Image" class="w-50"><br><h1>You Crashed!<br>The word was: ${secretWord}</h1>`;
         document.getElementById("result2").style.display = "block";
     }
 }
